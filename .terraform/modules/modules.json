@@ -1,0 +1,1 @@
+{"Modules":[{"Source":"./modules/tier/","Key":"1.app-tier;./modules/tier/","Version":"","Dir":".terraform/modules/0c5ba389ad4c34edd1526aa31d999136","Root":""},{"Source":"./modules/tier/","Key":"1.db-tier;./modules/tier/","Version":"","Dir":".terraform/modules/e9c5ac4151b2faccccbb6acf4a0a4d14","Root":""}]}
