@@ -41,6 +41,7 @@ resource "aws_security_group_rule" "rule" {
 }
 
 resource "aws_instance" "app" {
+  count         = "${var.instance_count}"
   ami           = "${var.ami_id}"
   instance_type = "t2.micro"
   user_data     = "${var.user_data}"

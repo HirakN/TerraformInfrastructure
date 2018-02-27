@@ -27,6 +27,10 @@ variable "public_ip" {
   description = "true/false for assignment of public IP"
 }
 
+variable "instance_count" {
+  description = "Number of EC2 instances to launch"
+}
+
 variable "ingress" {
   type = "list"
 }

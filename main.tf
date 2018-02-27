@@ -75,14 +75,15 @@ resource "aws_elb" "load" {
 }
 
 module "app-tier" {
+  instance_count = 2
   name = "app-hirak"
   source = "./modules/tier/"
   vpc_id = "${aws_vpc.hirak-vpc.id}" 
   route_table_id = "${aws_route_table.public-hirak.id}"
-  # cidr_block = "10.99.0.0/24"
+  cidr_block = "10.99.0.0/24"
   user_data = "${data.template_file.app_init.rendered}"
   ami_id = "ami-c4c3a7ab"
-  # public_ip = true
+  public_ip = true
 
   ingress = [{
     from_port   = 80
@@ -93,6 +94,7 @@ module "app-tier" {
 }
 
 module "db-tier" {
+  instance_count = 1
   name = "db-hirak"
   source = "./modules/tier/"
   vpc_id = "${aws_vpc.hirak-vpc.id}" 
